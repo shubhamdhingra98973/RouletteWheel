@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QdW-xg-9k6">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GeorgiaBold.ttf">
+            <string>Georgia-Bold</string>
+        </array>
+        <array key="GeorgiaBoldItalic.ttf">
+            <string>Georgia-BoldItalic</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--WheelVC-->
+        <scene sceneID="Ffi-OV-BTw">
+            <objects>
+                <viewController id="QdW-xg-9k6" customClass="WheelVC" customModule="RouletteWheelGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kJW-is-z6U"/>
+                        <viewControllerLayoutGuide type="bottom" id="Yzh-f6-g0i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6gH-OD-pJH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outer_wheel" translatesAutoresizingMaskIntoConstraints="NO" id="1UF-SB-6bg">
+                                <rect key="frame" x="6" y="130" width="308" height="308"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inner wheel" translatesAutoresizingMaskIntoConstraints="NO" id="sxO-nH-qdK">
+                                <rect key="frame" x="30" y="154" width="260" height="260"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="260" id="LPT-En-xS7"/>
+                                    <constraint firstAttribute="width" secondItem="sxO-nH-qdK" secondAttribute="height" multiplier="1:1" id="ggj-uv-s11"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ball" translatesAutoresizingMaskIntoConstraints="NO" id="6XY-Dm-Mry">
+                                <rect key="frame" x="6" y="124" width="308" height="314"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQe-5l-vl6" customClass="ButtonWheel" customModule="RouletteWheelGame" customModuleProvider="target">
+                                <rect key="frame" x="30" y="154" width="260" height="260"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjz-g5-mOk">
+                                <rect key="frame" x="110" y="480" width="100" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.27058823529411763" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="dZU-LN-bwC"/>
+                                    <constraint firstAttribute="height" constant="40" id="rU2-Vg-kK2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="14"/>
+                                <state key="normal" title="Rotate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnActionRotate:" destination="QdW-xg-9k6" eventType="touchUpInside" id="Z4R-oL-ewI"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roulette Wheel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2A-Ne-deX">
+                                <rect key="frame" x="16" y="36" width="288" height="27.5"/>
+                                <fontDescription key="fontDescription" name="Georgia-BoldItalic" family="Georgia" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.27058823529999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ujL-oh-1dN">
+                                <rect key="frame" x="16" y="75.5" width="288" height="30"/>
+                                <color key="backgroundColor" red="0.54509803921568623" green="0.37254901960784315" blue="0.074509803921568626" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="QdW-xg-9k6" id="G1p-aN-pcv"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="2e2-Mu-eyt" firstAttribute="trailing" secondItem="ujL-oh-1dN" secondAttribute="trailing" constant="16" id="0Fg-5q-kN0"/>
+                            <constraint firstItem="2e2-Mu-eyt" firstAttribute="trailing" secondItem="y2A-Ne-deX" secondAttribute="trailing" constant="16" id="18H-qJ-69Q"/>
+                            <constraint firstItem="ujL-oh-1dN" firstAttribute="leading" secondItem="2e2-Mu-eyt" secondAttribute="leading" constant="16" id="415-60-uoz"/>
+                            <constraint firstItem="AQe-5l-vl6" firstAttribute="top" secondItem="sxO-nH-qdK" secondAttribute="top" id="4cy-nq-jSE"/>
+                            <constraint firstItem="1UF-SB-6bg" firstAttribute="leading" secondItem="sxO-nH-qdK" secondAttribute="leading" constant="-24" id="4gr-wg-ZnU"/>
+                            <constraint firstItem="sxO-nH-qdK" firstAttribute="centerX" secondItem="6gH-OD-pJH" secondAttribute="centerX" id="8Nv-Tf-pAG"/>
+                            <constraint firstItem="ujL-oh-1dN" firstAttribute="top" secondItem="y2A-Ne-deX" secondAttribute="bottom" constant="12" id="8eP-GO-CSw"/>
+                            <constraint firstItem="6XY-Dm-Mry" firstAttribute="top" secondItem="1UF-SB-6bg" secondAttribute="top" constant="-6" id="A7n-dA-tX5"/>
+                            <constraint firstItem="AQe-5l-vl6" firstAttribute="width" secondItem="sxO-nH-qdK" secondAttribute="width" id="Dgi-Ul-qqO"/>
+                            <constraint firstItem="6XY-Dm-Mry" firstAttribute="trailing" secondItem="1UF-SB-6bg" secondAttribute="trailing" id="Squ-J0-iGK"/>
+                            <constraint firstItem="y2A-Ne-deX" firstAttribute="centerX" secondItem="2e2-Mu-eyt" secondAttribute="centerX" id="bjs-xr-SZT"/>
+                            <constraint firstItem="AQe-5l-vl6" firstAttribute="leading" secondItem="sxO-nH-qdK" secondAttribute="leading" id="h8i-aP-1PG"/>
+                            <constraint firstItem="y2A-Ne-deX" firstAttribute="top" secondItem="kJW-is-z6U" secondAttribute="bottom" constant="16" id="hUn-Ho-V51"/>
+                            <constraint firstItem="1UF-SB-6bg" firstAttribute="bottom" secondItem="sxO-nH-qdK" secondAttribute="bottom" constant="24" id="jsE-Lz-eP7"/>
+                            <constraint firstItem="6XY-Dm-Mry" firstAttribute="leading" secondItem="1UF-SB-6bg" secondAttribute="leading" id="l2Q-kh-5ox"/>
+                            <constraint firstItem="AQe-5l-vl6" firstAttribute="trailing" secondItem="sxO-nH-qdK" secondAttribute="trailing" id="mNc-ku-nih"/>
+                            <constraint firstItem="sxO-nH-qdK" firstAttribute="centerY" secondItem="6gH-OD-pJH" secondAttribute="centerY" id="qtf-7V-55h"/>
+                            <constraint firstItem="Yzh-f6-g0i" firstAttribute="top" secondItem="Jjz-g5-mOk" secondAttribute="bottom" constant="48" id="r3k-Ej-lGf"/>
+                            <constraint firstItem="AQe-5l-vl6" firstAttribute="height" secondItem="sxO-nH-qdK" secondAttribute="height" id="rNU-uI-SJs"/>
+                            <constraint firstItem="1UF-SB-6bg" firstAttribute="trailing" secondItem="sxO-nH-qdK" secondAttribute="trailing" constant="24" id="roA-6Q-So8"/>
+                            <constraint firstItem="1UF-SB-6bg" firstAttribute="top" secondItem="sxO-nH-qdK" secondAttribute="top" constant="-24" id="s7K-wI-EgW"/>
+                            <constraint firstItem="ujL-oh-1dN" firstAttribute="centerX" secondItem="y2A-Ne-deX" secondAttribute="centerX" id="to3-cr-o0S"/>
+                            <constraint firstItem="y2A-Ne-deX" firstAttribute="leading" secondItem="2e2-Mu-eyt" secondAttribute="leading" constant="16" id="uIh-tC-Zql"/>
+                            <constraint firstItem="Jjz-g5-mOk" firstAttribute="centerX" secondItem="2e2-Mu-eyt" secondAttribute="centerX" id="vmk-NN-LZj"/>
+                            <constraint firstItem="AQe-5l-vl6" firstAttribute="bottom" secondItem="sxO-nH-qdK" secondAttribute="bottom" id="yli-PJ-ogK"/>
+                            <constraint firstItem="6XY-Dm-Mry" firstAttribute="bottom" secondItem="1UF-SB-6bg" secondAttribute="bottom" id="zkH-26-R5V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2e2-Mu-eyt"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnRotate" destination="Jjz-g5-mOk" id="GwH-gQ-gLE"/>
+                        <outlet property="imgBall" destination="6XY-Dm-Mry" id="RoW-to-ejO"/>
+                        <outlet property="imgInnerWheel" destination="sxO-nH-qdK" id="wSY-eU-twf"/>
+                        <outlet property="imgOuterWheel" destination="1UF-SB-6bg" id="5Gu-os-uvY"/>
+                        <outlet property="numberView" destination="AQe-5l-vl6" id="ftZ-Zc-V2B"/>
+                        <outlet property="txtNumber" destination="ujL-oh-1dN" id="yQl-sc-7bq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oq-pj-rTx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1564" y="-96"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ball" width="576" height="576"/>
+        <image name="inner wheel" width="860" height="860"/>
+        <image name="outer_wheel" width="1044" height="1044"/>
+    </resources>
+</document>
